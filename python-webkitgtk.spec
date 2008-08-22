@@ -10,7 +10,7 @@ Group:		Development/Python
 URL:		http://code.google.com/p/pywebkitgtk/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	webkitgtk-devel
-BuildRequires:	python-devel
+BuildRequires:	pygtk2.0-devel
 %py_requires
 Provides:	%{oname} = %{version}-%{release}
 
