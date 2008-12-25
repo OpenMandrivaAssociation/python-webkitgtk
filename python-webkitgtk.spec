@@ -3,7 +3,7 @@
 Summary:	Python bindings for WebKitGtk
 Name:		python-webkitgtk
 Version:	1.0.1
-Release:	%{mkrel 1}
+Release:	%{mkrel 2}
 Source0:	http://pywebkitgtk.googlecode.com/files/%{oname}-%{version}.tar.gz
 License:	LGPLv2+
 Group:		Development/Python
