@@ -5,6 +5,10 @@ Name:		python-webkitgtk
 Version:	1.0.2
 Release:	%{mkrel 1}
 Source0:	http://pywebkitgtk.googlecode.com/files/%{oname}-%{version}.tar.gz
+# From upstream SVN (rev 88): fix build with recent webkit / python
+# Patch is against Makefile.in as you get all sorts of weird errors
+# trying to do automake, or autoreconf, or anything - AdamW 2008/12
+Patch0:		pywebkitgtk-1.0.2-build.patch
 License:	LGPLv2+
 Group:		Development/Python
 URL:		http://code.google.com/p/pywebkitgtk/
@@ -20,6 +24,7 @@ Python.
 
 %prep
 %setup -q -n %{oname}-%{version}
+%patch0 -p1 -b .build
 
 %build
 %configure2_5x
