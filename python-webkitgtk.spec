@@ -3,7 +3,7 @@
 Summary:	Python bindings for WebKitGtk
 Name:		python-webkitgtk
 Version:	1.0.2
-Release:	%{mkrel 1}
+Release:	%{mkrel 2}
 Source0:	http://pywebkitgtk.googlecode.com/files/%{oname}-%{version}.tar.gz
 # From upstream SVN (rev 88): fix build with recent webkit / python
 # Patch is against Makefile.in as you get all sorts of weird errors
