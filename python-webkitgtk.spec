@@ -3,7 +3,7 @@
 Summary:	Python bindings for WebKitGtk
 Name:		python-webkitgtk
 Version:	1.1.7
-Release:	%mkrel 2
+Release:	%mkrel 3
 Source0:	http://pywebkitgtk.googlecode.com/files/%{oname}-%{version}.tar.bz2
 License:	LGPLv2+
 Group:		Development/Python
@@ -24,11 +24,11 @@ Python.
 
 %build
 %configure2_5x
-%make
+%make LIBS="`python-config --libs`"
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+%makeinstall_std LIBS="`python-config --libs`"
 
 %clean
 rm -rf %{buildroot}
@@ -39,4 +39,3 @@ rm -rf %{buildroot}
 %{py_platsitedir}/webkit/*.py
 %{py_platsitedir}/webkit/webkit.*
 %{_datadir}/pywebkitgtk/defs/webkit-*.defs
-
