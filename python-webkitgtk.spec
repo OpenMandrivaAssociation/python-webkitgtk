@@ -1,20 +1,19 @@
-%define oname	pywebkitgtk
+%define oname pywebkitgtk
 
 %define _requires_exceptions pkgconfig\(.*\)
 
 Summary:	Python bindings for WebKitGtk
 Name:		python-webkitgtk
 Version:	1.1.8
-Release:	%mkrel 4
-Source0:	http://pywebkitgtk.googlecode.com/files/%{oname}-%{version}.tar.bz2
+Release:	5
 License:	LGPLv2+
 Group:		Development/Python
 URL:		http://code.google.com/p/pywebkitgtk/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source0:	http://pywebkitgtk.googlecode.com/files/%{oname}-%{version}.tar.bz2
+Source1:	python-webkitgtk.rpmlintrc
 BuildRequires:	webkitgtk-devel
 BuildRequires:	pygtk2.0-devel
-BuildRequires:  python
-
+BuildRequires: 	python
 Provides:	%{oname} = %{version}-%{release}
 
 %description
@@ -29,14 +28,9 @@ Python.
 %make LIBS="`python-config --libs`"
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std LIBS="`python-config --libs`"
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS MAINTAINERS NEWS README
 %{py_platsitedir}/webkit/*.py
 %{py_platsitedir}/webkit/webkit.*
