@@ -1,6 +1,10 @@
 %define oname pywebkitgtk
 
+%if %{_use_internal_dependency_generator}
+%define __noautoreq 'pkgconfig\(.*\)'
+%else
 %define _requires_exceptions pkgconfig\(.*\)
+%endif
 
 Summary:	Python bindings for WebKitGtk
 Name:		python-webkitgtk
