@@ -1,0 +1,19 @@
+Description: Add WebView.get_title() function
+Author: Chris Coulson <chris.coulson@canonical.com>
+Forwarded: no
+
+--- pywebkitgtk-1.1.8.orig/webkit/webkit-1.1.defs
++++ pywebkitgtk-1.1.8/webkit/webkit-1.1.defs
+@@ -150,6 +150,12 @@
+   (return-type "gboolean")
+ )
+ 
++(define-method get_title
++  (of-object "WebKitWebView")
++  (c-name "webkit_web_view_get_title")
++  (return-type "const-gchar*")
++)
++
+ ;; from webkit/webkitwebwindowfeatures.h
+ (define-function webkit_web_window_features_new
+   (is-constructor-of "WebKitWebWindowFeatures")
