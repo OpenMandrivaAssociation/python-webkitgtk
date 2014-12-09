@@ -18,7 +18,7 @@ Patch0:		web_view_get_title.patch
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(pygtk-2.0)
 BuildRequires:	pkgconfig(webkit-1.0)
-BuildRequires:	python
+BuildRequires:	pkgconfig(python2)
 Provides:	%{oname} = %{EVRD}
 
 %description
@@ -26,8 +26,8 @@ PyWebKitGtk provides an API for developers to program WebKit/Gtk using Python.
 
 %files
 %doc AUTHORS MAINTAINERS NEWS README
-%{py_platsitedir}/webkit/*.py
-%{py_platsitedir}/webkit/webkit.*
+%{py2_platsitedir}/webkit/*.py
+%{py2_platsitedir}/webkit/webkit.*
 %{_datadir}/pywebkitgtk/defs/webkit-*.defs
 %{_libdir}/pkgconfig/*.pc
 
@@ -38,7 +38,8 @@ PyWebKitGtk provides an API for developers to program WebKit/Gtk using Python.
 %patch0 -p1
 
 %build
-%configure2_5x
+export PYTHON=%{__python2}
+%configure
 %make LIBS="`python-config --libs`"
 
 %install
