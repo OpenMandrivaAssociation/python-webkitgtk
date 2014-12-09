@@ -38,6 +38,7 @@ PyWebKitGtk provides an API for developers to program WebKit/Gtk using Python.
 %patch0 -p1
 
 %build
+%define _disable_ld_no_undefined 1
 export PYTHON=%{__python2}
 %configure
 %make LIBS="`python-config --libs`"
