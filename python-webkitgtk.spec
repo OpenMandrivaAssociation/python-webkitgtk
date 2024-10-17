@@ -12,7 +12,7 @@ Version:	1.1.8
 Release:	15
 License:	LGPLv2+
 Group:		Development/Python
-Url:		http://code.google.com/p/pywebkitgtk/
+Url:		https://code.google.com/p/pywebkitgtk/
 Source0:	http://pywebkitgtk.googlecode.com/files/%{oname}-%{version}.tar.bz2
 Source100:	python-webkitgtk.rpmlintrc
 Patch0:		web_view_get_title.patch
